@@ -1,3 +1,14 @@
+function inputEnter() {
+
+    var enter = document.getElementById('nova-tarefa');
+
+    enter.addEventListener('keypress', (e) => {
+
+        if (e.keyCode == 13) {
+            addItem()
+        }
+    })
+}
 
 function addItem() {
 
@@ -20,9 +31,12 @@ function addItem() {
 
 
 
-}
+};
 
 function deletarItem(botao) {
     botao.parentElement.remove();
 
-}
+};
+
+
+
