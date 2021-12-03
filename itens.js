@@ -1,11 +1,28 @@
+
 function addItem() {
-    var novaTarefa = document.getElementById('nova-tarefa').value
 
-    var lista = document.getElementById("lista")
-    var item = document.getElementById('item')
-    var itens = item.content.cloneNode(true)
+    var novaTarefa = document.getElementById('nova-tarefa');
 
-    // alert(novaTarefa)
+    var lista = document.getElementById('lista');
+    var item = document.getElementById('item');
+    var tarefa = item.content.cloneNode(true);
 
-    lista.appendChild(itens)
+    var li = tarefa.querySelector('li');
+
+    if (novaTarefa.value != '') {
+
+        lista.appendChild(tarefa);
+        li.append(novaTarefa.value);
+
+    };
+
+    novaTarefa.value = '';
+
+
+
+}
+
+function deletarItem(botao) {
+    botao.parentElement.remove();
+
 }
