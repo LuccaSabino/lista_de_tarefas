@@ -1,14 +1,14 @@
-function inputEnter() {
+// // Para usar o enter do teclado no elemento input
+var enter = document.getElementById('nova-tarefa');
 
-    var enter = document.getElementById('nova-tarefa');
+enter.addEventListener('keyup', (e) => {
 
-    enter.addEventListener('keypress', (e) => {
+    if (e.key === "Enter") {
+        addItem();
+    };
+});
 
-        if (e.keyCode == 13) {
-            addItem()
-        }
-    })
-}
+// // Para adicionar uma nova tarefa
 
 function addItem() {
 
@@ -18,12 +18,28 @@ function addItem() {
     var item = document.getElementById('item');
     var tarefa = item.content.cloneNode(true);
 
-    var li = tarefa.querySelector('li');
+    var span = tarefa.querySelector('span');
+    var nmrDeItens = lista.children.length;
 
     if (novaTarefa.value != '') {
 
+        // var nmrDeItens = lista.children.length;
+
+        // if (nmrDeItens % 2 == 0) {
+
+        //     tarefa.style.backgroundColor = 'pink'
+
+
+        // }
+
+        // if (nmrDeItens % 3 == 0) {
+        //     tarefa +=
+
+        // }
+
+
         lista.appendChild(tarefa);
-        li.append(novaTarefa.value);
+        span.append(novaTarefa.value);
 
     };
 
@@ -33,10 +49,11 @@ function addItem() {
 
 };
 
+
+// // Para remover alguma tarefa
+
 function deletarItem(botao) {
     botao.parentElement.remove();
 
 };
-
-
 

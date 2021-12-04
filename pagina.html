@@ -20,7 +20,7 @@
     <header class="header">
       <h2>Lista de Tarefas</h2>
       <div class="headerInput">
-        <input type="text" id="nova-tarefa" placeholder="Escreva um novo item" onkeypress="inputEnter()" />
+        <input type="text" id="nova-tarefa" placeholder="Escreva um novo item" />
         <button id="enter" class="addBtn" onclick="addItem()">Inserir</button>
       </div>
     </header>
@@ -29,6 +29,13 @@
       <template id="item">
         <li id="li">
 
+          <span id='span' class="span"></span>
+
+          <button class="editar" onclick="editarItem('span')">
+
+            <i class="fa fa-pencil"></i>
+
+          </button>
 
           <button class="remover" onclick="deletarItem(this)">
 
